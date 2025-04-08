@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tone Changer - LiveTalk</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="tone-changer.js"></script>
+  <style>
+    .action-btn {
+      margin-top: 8px;
+      margin-right: 8px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: none;
+      background-color: #444;
+      color: white;
+    }
+
+    .tone-buttons button {
+      margin: 5px;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: none;
+      background-color: #0088cc;
+      color: white;
+    }
+
+    #tone-output {
+      width: 100%;
+      min-height: 120px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">LiveTalk</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="translator.html">Translator</a></li>
+        <li><a href="notepad.html">Notepad</a></li>
+        <li><a href="tone-changer.html" class="active">Tone Changer</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="night-mode-toggle">🌙</button>
+  </header>
+
+  <main>
+    <section id="tone-changer">
+      <h2>Tone Changer</h2>
+
+      <textarea id="inputText" placeholder="Enter your message and choose a tone to change how it sounds..."></textarea>
+
+      <div class="tone-buttons">
+        <button onclick="changeTone('formal')">Formal</button>
+        <button onclick="changeTone('casual')">Casual</button>
+        <button onclick="changeTone('friendly')">Friendly</button>
+        <button onclick="changeTone('sarcastic')">Sarcastic</button>
+        <button onclick="changeTone('poetic')">Poetic</button>
+      </div>
+
+      <div id="tone-result">
+        <h2>Result:</h2>
+        <textarea id="tone-output" placeholder="Resulted text will appear here..." readonly></textarea>
+
+        <div class="actions">
+          <button id="copy-btn" class="action-btn">📋 Copy</button>
+          <button id="clear-btn" class="action-btn">🧹 Clear</button>
+          <button id="listen-btn" class="action-btn">🔊 Listen</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Mini Project</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grammar Corrector - LiveTalk</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="grammar.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">LiveTalk</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="translator.html">Translator</a></li>
+        <li><a href="notepad.html">Notepad</a></li>
+        <li><a href="tone-changer.html">Tone Changer</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="grammar-corrector.html" class="active">Grammar</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="night-mode-toggle">🌙</button>
+  </header>
+
+  <main>
+    <section id="grammar-corrector"></section>
+    <h2>Grammar Corrector</h2>
+    <textarea id="grammar-input" placeholder="Enter your text and fix the grammar in seconds..."></textarea>
+    <button id="checkGrammarBtn">Check Grammar</button>
+    <h3>Corrected Output</h3>
+    <textarea id="grammar-output" placeholder="Resulted text will appear here..." readonly></textarea>
+  </main>
+
+  <footer>
+    <p>Mini Project</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LiveTalk Notepad</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="notepad.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">LiveTalk</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="translator.html">Translator</a></li>
+        <li><a href="notepad.html">Notepad</a></li>
+        <li><a href="tone-changer.html">Tone Changer</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="night-mode-toggle">🌙</button>
+  </header>
+
+  <main>
+    <section id="notepad">
+      <h2>Smart Notepad 📝</h2>
+
+      <textarea id="note-input" placeholder="Type your note or use the mic..." rows="6"></textarea>
+
+      <div class="actions">
+        <button id="speech-to-text-btn">🎤 Speak</button>
+        <button id="save-note-btn">💾 Save</button>
+        <button id="clear-note-btn">🧹 Clear</button>
+      </div>
+
+      <div id="notes-section">
+        <h3>Your Saved Notes</h3>
+        <input type="text" id="search-notes" placeholder="Search notes..." />
+        <ul id="notes-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Mini Project</p>
+  </footer>
+</body>
+</html>

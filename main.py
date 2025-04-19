@@ -3,6 +3,10 @@ from fastapi.responses import JSONResponse, FileResponse
 from speech_to_text import convert_speech_to_text
 from translate import translate_text
 from text_to_speech import convert_text_to_speech
+from text_to_speech import text_to_speech_main
+from speech_to_text_utils import convert_speech_to_text
+from fastapi import UploadFile, Form
+import os
 
 app = FastAPI()
 
@@ -36,3 +40,17 @@ async def text_to_speech(text: str, language: str = 'en'):
         return JSONResponse(content={"error": str(e)}, status_code=500)
 
 
+@app.post("/api/text-to-speech")
+async def tts_api(text: str = Form(...)):
+    filename = "output.mp3"
+    text_to_speech_main(text, filename)
+    return FileResponse(filename, media_type="audio/mpeg")
+
+@app.post("/api/speech-to-text")
+async def stt_api(file: UploadFile):
+    file_path = f"temp_{file.filename}"
+    with open(file_path, "wb") as f:
+        f.write(await file.read())
+    result = convert_speech_to_text(file_path)
+    os.remove(file_path)
+    return JSONResponse(content={"transcript": result})

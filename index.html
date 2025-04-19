@@ -30,6 +30,20 @@
     <p>Real-time translation for seamless communication.</p>
     <a href="translator.html"><button>Start Translating</button></a>
   </section>
+  <!-- Add below inside the hero or new section -->
+  <section>
+    <h2>Text to Speech</h2>
+    <form action="http://127.0.0.1:8000/api/text-to-speech" method="post">
+      <input type="text" name="text" placeholder="Enter text here" required>
+      <button type="submit">Convert</button>
+    </form>
+
+    <h2>Speech to Text</h2>
+    <form action="http://127.0.0.1:8000/api/speech-to-text" method="post" enctype="multipart/form-data">
+      <input type="file" name="file" accept=".wav" required>
+      <button type="submit">Transcribe</button>
+    </form>
+  </section>
 
   <section id="features">
     <h2>Features</h2>
